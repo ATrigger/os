@@ -11,7 +11,7 @@ hello.o: hello.c
 	$(CC) $(CFLAGS) -c -o hello.o hello.c
 
 hello: hello.o
-	$(CC) hello.o -o hello
+	$(CC) hello.o -o ./bin/hello
 
 clean:
 	$(RM) hello
