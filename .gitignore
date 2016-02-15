@@ -32,5 +32,6 @@
 *.dSYM/
 # Ignore `bin` dir
 bin/
+*/bin/
 # or
 */bin/*
