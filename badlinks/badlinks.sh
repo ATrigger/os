@@ -2,13 +2,11 @@
 recurse() {
 	for element in $1/*; do
 		if [ -h "$element" -a ! -e "$element" ] 
-		then echo "$element"
-		fi
-		if [ -d "$element" ] 
-		then recurse $element
-		fi
-		if [ `stat --format=%Y $element` -le $(( `date +%s` - 604800 )) ]
-		then echo "$element"
+			then echo "$element"
+		elif [ `stat --format=%Y $element` -le $(( `date +%s` - 604800 )) ] 
+			then echo "$element"
+		elif [ -d "$element" ] 
+			then recurse $element
 		fi
 	done
 }
