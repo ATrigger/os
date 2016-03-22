@@ -1,7 +1,7 @@
 #include <signal.h>
 #include <stdio.h>
 void handler(int sig, siginfo_t* info, void* vp) { 
-    printf("got sigusr from %d\n",info->si_pid);
+    printf("got sigusr from %d\n",(int)((pid_t)info->si_pid));
 } 
 
 int main(){
