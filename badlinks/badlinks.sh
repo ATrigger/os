@@ -8,6 +8,4 @@ recurse() {
 		fi
 	done
 }
-for entity in $1; do
-	recurse $entity
-done
+recurse $1
