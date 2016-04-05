@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <signal.h>
 class mybuf {
@@ -122,10 +122,17 @@ int main()
                     int argstart=i;
                     while(!issplitchar(input[i])) i++;
                     offset=i;
-
-                }
+                    return strndup(input + argstart, i - argstart);
+                }(targetstr,offset);
             }
+            args.push_back({argc,tempargv});
+            while(targetstr[offset] == ' ' || targetstr[offset] == '|')
+                offset++;
         }
+        //TODO:RUN
+        [](std::vector<targetarg> &args) {
+            
+        }(args);
     }
     return 0;
 }
